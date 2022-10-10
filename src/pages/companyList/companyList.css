@@ -1,0 +1,49 @@
+.companyList {
+    flex: 4;
+}
+
+.companyListItem {
+    display: flex;
+    align-items: center;
+}
+
+.companyListImg {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.companyListEdit {
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: #3bb077;
+    color: white;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.companyListDelete {
+    color: red;
+    cursor: pointer;
+}
+
+.createCompany {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1em 0;
+}
+
+.companyAddButton {
+    width: auto !important;
+    border: none;
+    padding: 10px 20px !important;
+    background-color: teal;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}

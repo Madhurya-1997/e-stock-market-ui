@@ -1,0 +1,188 @@
+.company {
+  flex: 4;
+  padding: 20px;
+}
+
+.companyTitleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.companyAddButton {
+  width: 80px;
+  border: none;
+  background-color: teal;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.companyInfoKey {
+  font-weight: 300;
+  font-size: 20px;
+  padding: 0 10px;
+}
+
+.companyAddButtonLink {
+  text-decoration: none;
+}
+
+
+.companyTop {
+  display: flex;
+  width: fit-content;
+}
+
+.companyTopRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 4;
+  padding: 20px;
+}
+
+.timeSpan:hover {
+  outline: none;
+}
+
+.timeSpan {
+  border: none;
+  padding-top: 5px;
+  border-bottom: 1px solid grey;
+}
+
+.timeSpanButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  width: fit-content;
+  border: none;
+  background-color: whitesmoke;
+  color: black;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.timeSpanButton:hover {
+  background-color: black;
+  color: whitesmoke;
+  transition: 0.2s ease-in-out;
+}
+
+.timeControlGroup {
+  display: flex;
+}
+
+.timeControl {
+  /* padding: 1em; */
+  margin: 1em;
+}
+
+.companyTopLeft {
+  flex: 6;
+  padding: 20px;
+  margin: 20px;
+  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.companyInfoImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.companyInfoTop {
+  display: flex;
+  align-items: center;
+}
+
+.companyName {
+  font-weight: 600;
+}
+
+
+.companyInfoItem {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px 10px;
+}
+
+.companyInfoValue {
+  font-weight: bold;
+}
+
+.companyBottom {
+  padding: 20px;
+  margin: 20px;
+  -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.companyForm {
+  display: flex;
+  justify-content: space-between;
+}
+
+.companyFormLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.companyFormLeft>label {
+  margin-bottom: 10px;
+  color: gray;
+}
+
+.companyFormLeft>input {
+  margin-bottom: 10px;
+  border: none;
+  padding: 5px;
+  border-bottom: 1px solid gray;
+}
+
+.companyFormLeft>select {
+  margin-bottom: 10px;
+}
+
+.companyUploadImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.companyFormRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.companyUpload {
+  display: flex;
+  align-items: center;
+}
+
+.companyButton {
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: darkblue;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}

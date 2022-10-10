@@ -1,0 +1,32 @@
+.dialogAlertYesButton {
+    width: auto !important;
+    border: none;
+    padding: 10px 25px !important;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.dialogAlertYesButton:hover {
+    background-color: maroon;
+    transition: 0.2s ease-in-out;
+}
+
+.dialogAlertNoButton {
+    width: auto !important;
+    border: none;
+    padding: 10px 25px !important;
+    background-color: teal;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.dialogAlertNoButton:hover {
+    background-color: darkslategray;
+    transition: 0.2s ease-in-out;
+}
