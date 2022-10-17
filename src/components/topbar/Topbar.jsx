@@ -51,7 +51,7 @@ export default function Topbar() {
             value={keyword}
             onChange={e => setKeyword(e.target.value)}
             className="search"
-            placeholder="search company..." />
+            placeholder="company code..." />
           <SearchOutlined
             onClick={() => goToCompany(keyword)}
             className="searchBtn" />

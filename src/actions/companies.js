@@ -49,7 +49,6 @@ export const deleteCompany = (code) => async (dispatch) => {
         await api.deleteCompany(code);
 
         dispatch({ type: 'DELETE_COMPANY', payload: code });
-        dispatch({ type: 'END_LOADING' });
 
     } catch (error) {
         console.log(error);
