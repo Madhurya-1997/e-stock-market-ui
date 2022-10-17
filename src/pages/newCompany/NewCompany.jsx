@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { StaticRouter, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { createCompany } from "../../actions/companies";
-import DialogFormBox from "../../components/dialog/DialogFormBox";
 import "./newCompany.css";
 
 export default function NewCompany() {
@@ -29,22 +30,36 @@ export default function NewCompany() {
   const addCompany = async (e) => {
     e.preventDefault();
 
-    if (!err.val) {
-      console.log(company);
-      await dispatch(createCompany(company));
-    } else {
-      // toast.error
-    }
-    if (!isLoading && !(typeof (error) === undefined)) {
-      history.push('/');
-    }
+    await dispatch(createCompany(company, history));
+
+    // if (!err.val) {
+    //   console.log(company);
+    //   await dispatch(createCompany(company));
+    // } else {
+    //   // toast.error
+    // }
+
+
+    // if (!isLoading && !(typeof (error) === undefined) && !(typeof (error) === 'object')) {
+    //   history.push('/');
+    // }
+
+
   }
 
+
+
+
   useEffect(() => {
-    // if (!isLoading && !(typeof (error) === undefined)) {
-    //   history.push(`/`);
-    // }
-  }, [isLoading])
+    console.log(error)
+    if (error) {
+      if (error.response.data.hasOwnProperty('errors')) {
+        toast.error(error.response.data.errors[0], { position: toast.POSITION.BOTTOM_LEFT })
+      } else {
+        toast.error(error.response.data.message, { position: toast.POSITION.BOTTOM_LEFT });
+      }
+    }
+  }, [error])
 
   return (
     <div className="newCompany">
@@ -114,6 +129,8 @@ export default function NewCompany() {
 
         <button type="submit" className="addCompanyButton">Create</button>
       </form>
+
+      <ToastContainer />
 
       {/* <DialogFormBox
         title="Do you wish to add stocks?"

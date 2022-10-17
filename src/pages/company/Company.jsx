@@ -1,10 +1,8 @@
 import { Link, useParams } from "react-router-dom";
 import "./company.css";
-import { Publish, DeleteOutline } from "@material-ui/icons";
 import AddIcon from '@material-ui/icons/Add';
-import { DataGrid } from "@material-ui/data-grid";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useState } from "react";
 import { getCompany } from "../../actions/companies";
 import Loader from "../../components/loader/Loader";
 import StocksWidget from "../../components/widgets/StocksWidget";
@@ -88,7 +86,7 @@ export default function Company() {
     const fetchStockMetrics = async (code) => {
         const startDate = formatDate(timeSpan.startDate);
         const endDate = formatDate(timeSpan.endDate);
-        if (new Date(startDate) > new Date(endDate)) {
+        if (new Date(timeSpan.startDate) > new Date(timeSpan.endDate)) {
             toast.error("Start Date should come before End Date", { position: toast.POSITION.BOTTOM_LEFT })
         } else if (timeSpan.startDate === '' || timeSpan.endDate === '') {
             toast.error("Please enter the Start & End Dates", { position: toast.POSITION.BOTTOM_LEFT })
@@ -168,6 +166,8 @@ export default function Company() {
                                     <AddIcon />
                                     Fetch Stocks
                                 </button>
+
+                                <p style={{ color: "teal", marginTop: "0px", paddingTop: "0px", fontSize: "12px" }}>Enter start and end date of stock prices to get the minimum, maximum and average prices </p>
                             </form>
                         ) : null}
 
@@ -185,7 +185,7 @@ export default function Company() {
 
                     <ToastContainer />
                     <DialogStockMetrics
-                        title="Stock Overview"
+                        title="Prices Overview"
                         description="Test description"
                         stockMetrics={stockMetrics}
                         close={() => setOpen(false)}

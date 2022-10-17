@@ -40,6 +40,11 @@ export default (state = INITIAL_STATE, action) => {
                 companies: [...state.companies, { company: action.payload.data, stocks: [] }],
                 error: null
             }
+        case 'CREATE_COMPANY_ERROR':
+            return {
+                ...state,
+                error: action.payload.error
+            }
         case 'DELETE_COMPANY':
             return {
                 ...state,

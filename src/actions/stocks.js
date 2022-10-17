@@ -13,18 +13,18 @@ export const getCompanyStocks = (code) => async (dispatch) => {
     }
 };
 
-export const createStock = (code, stock) => async (dispatch) => {
+export const createStock = (code, stock, history) => async (dispatch) => {
     try {
         dispatch({ type: 'START_LOADING' });
         const { data } = await api.createStock(code, stock);
 
         dispatch({ type: 'CREATE_STOCK', payload: { data } });
         dispatch({ type: 'END_LOADING' });
+        history.push(`/company/${code}`)
 
     } catch (error) {
-        console.error(error)
-        // dispatch({ type: 'CREATE_STOCK_ERROR', payload: { error } });
-        // dispatch({ type: 'END_LOADING' });
+        dispatch({ type: 'CREATE_STOCK_ERROR', payload: { error } });
+        dispatch({ type: 'END_LOADING' });
     }
 };
 

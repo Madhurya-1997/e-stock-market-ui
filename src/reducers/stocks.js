@@ -23,6 +23,11 @@ export default (state = INITIAL_STATE, action) => {
                 stocks: [...state.stocks, action.payload.data],
                 stocksError: null
             }
+        case 'CREATE_STOCK_ERROR':
+            return {
+                ...state,
+                stocksError: action.payload.error
+            }
         case 'FETCH_STOCKS_WITHIN_TIMESPAN':
             return {
                 ...state,

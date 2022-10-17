@@ -27,13 +27,14 @@ export const getCompanies = () => async (dispatch) => {
     }
 };
 
-export const createCompany = (company) => async (dispatch) => {
+export const createCompany = (company, history) => async (dispatch) => {
     try {
         dispatch({ type: 'START_LOADING' });
         const { data } = await api.createCompany(company);
 
         dispatch({ type: 'CREATE_COMPANY', payload: { data } });
         dispatch({ type: 'END_LOADING' });
+        history.push("/")
 
     } catch (error) {
         dispatch({ type: 'CREATE_COMPANY_ERROR', payload: { error } });

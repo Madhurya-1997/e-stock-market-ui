@@ -58,11 +58,11 @@ export default function CompanyList() {
 
   // }, [isLoading])
 
-  useEffect(() => {
-    // if (!isLoading && !(typeof (error) === undefined)) {
-    //   dispatch(getCompanies());
-    // }
-  }, [])
+  // useEffect(() => {
+  //   if (error) {
+  //     toast.error("Please enter the correct fields !!")
+  //   }
+  // }, [error])
 
 
   const columns = [

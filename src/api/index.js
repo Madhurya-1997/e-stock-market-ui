@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create(
-    { baseURL: process.env.NODE_ENV ? 'http://localhost:1000/api/v1.0/market' : null }
+    { baseURL: !process.env.NODE_ENV === 'development' ? 'http://localhost:1000/api/v1.0/market' : "http://api-gateway-lb-17127578.ap-south-1.elb.amazonaws.com/api/v1.0/market" }
 );
 
 

@@ -30,7 +30,7 @@ const StocksWidget = ({ stockList }) => {
             <tr className="widgetLgTr">
                 <th className="widgetLgTh">Amount</th>
                 <th className="widgetLgTh">Created At</th>
-                <th className="widgetLgTh">End Date</th>
+                <th className="widgetLgTh">Price End Date</th>
                 <th className="widgetLgTh">Duration</th>
                 <th className="widgetLgTh">Status</th>
             </tr>
@@ -41,7 +41,7 @@ const StocksWidget = ({ stockList }) => {
                     <td className="widgetLgDate">{transformedDate(stock.endDate)}</td>
                     <td className="widgetLgAmount">{stock.stockDuration}</td>
                     <td className="widgetLgStatus">
-                        <Button type={`${hasStockExpired(stock.endDate) ? "Approved" : "Expired"}`} />
+                        <Button type={`${hasStockExpired(stock.endDate) ? "Available" : "Expired"}`} />
                     </td>
                 </tr>
             ))}

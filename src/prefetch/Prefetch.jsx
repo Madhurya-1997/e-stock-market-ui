@@ -11,7 +11,7 @@ const Prefetch = ({ children }) => {
         return () => {
             console.log("Unmounted prefetch component...")
         }
-    }, [])
+    }, [dispatch])
 
 
     return (
